@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/not_mini"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/custom_border"
+    android:clickable="true"
+    android:focusable="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/baslik_mini"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Not 1"
+        app:fontFamily="@font/roboto_medium"
+        android:textSize="20sp"
+        android:textColor="#000000"/>
+
+    <TextView
+        android:id="@+id/metin_mini"
+        android:layout_width="0dp"
+        android:layout_height="21dp"
+        app:fontFamily="@font/roboto"
+        tools:text="öyle böyle şöyle öyle böyle şöyle öyle böyle şöyle öyle böyle"
+        android:textColor="#424242"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tarih_mini"
+        app:layout_constraintTop_toBottomOf="@id/baslik_mini" />
+
+    <TextView
+        android:id="@+id/tarih_mini"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="17 Nisan 2019"
+        app:fontFamily="@font/roboto"
+        android:textSize="12sp"/>
+
+</android.support.constraint.ConstraintLayout>
