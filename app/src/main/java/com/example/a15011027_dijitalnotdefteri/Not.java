@@ -12,7 +12,6 @@ public class Not implements Parcelable {
     private String baslik;
     private String metin;
     private Date tarih;
-    private Location location;
 
     public Not(int id, String baslik, String metin, Date tarih) {
         this.id = id;
