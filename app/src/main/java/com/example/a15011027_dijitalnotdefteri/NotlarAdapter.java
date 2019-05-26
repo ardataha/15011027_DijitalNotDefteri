@@ -1,5 +1,6 @@
 package com.example.a15011027_dijitalnotdefteri;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
@@ -21,6 +22,7 @@ public class NotlarAdapter extends RecyclerView.Adapter<NotlarAdapter.MyViewHold
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
         public TextView baslik, metin, tarih;
+        public ConstraintLayout not_mini;
 
         public MyViewHolder(View view){
             super(view);
@@ -28,6 +30,7 @@ public class NotlarAdapter extends RecyclerView.Adapter<NotlarAdapter.MyViewHold
             baslik = (TextView) view.findViewById(R.id.baslik_mini);
             metin = (TextView) view.findViewById(R.id.metin_mini);
             tarih = (TextView) view.findViewById(R.id.tarih_mini);
+            not_mini = (ConstraintLayout) view.findViewById(R.id.not_mini);
         }
     }
 
@@ -41,12 +44,21 @@ public class NotlarAdapter extends RecyclerView.Adapter<NotlarAdapter.MyViewHold
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(MyViewHolder holder, final int position) {
         Not not = notlar.get(position);
         holder.baslik.setText(not.getBaslik());
         holder.metin.setText(not.getMetin());
         SimpleDateFormat objSDF = new SimpleDateFormat("dd MMM yyyy");
         holder.tarih.setText(objSDF.format(not.getTarih()));
+
+        holder.not_mini.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), NotEdit.class);
+                intent.putExtra("Not", notlar.get(position));
+                v.getContext().startActivity(intent);
+            }
+        });
     }
 
     public int getItemCount(){

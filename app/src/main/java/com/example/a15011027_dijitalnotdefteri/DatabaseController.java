@@ -40,6 +40,17 @@ public class DatabaseController {
         db.insert("NOTLAR", null, values);
     }
 
+    public void notGuncelle(Not not) {
+        ContentValues values = new ContentValues();
+        values.put("baslik", not.getBaslik());
+        values.put("metin", not.getMetin());
+        Date tarih = not.getTarih();
+        SimpleDateFormat objSDF = new SimpleDateFormat("dd MMM yyyy");
+        values.put("tarih", objSDF.format(tarih));
+        int id = not.getId();
+        db.update("NOTLAR", values, "id="+id, null);
+    }
+
     public void notSil(Not not) {
         int id = not.getId();
         db.delete("NOTLAR", "id="+id, null);

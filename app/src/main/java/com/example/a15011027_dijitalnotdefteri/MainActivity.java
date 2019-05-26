@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -39,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         yeniNotButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, NotEdit.class);
+                Intent intent = new Intent(MainActivity.this, NotEkle.class);
                 startActivity(intent);
             }
         });

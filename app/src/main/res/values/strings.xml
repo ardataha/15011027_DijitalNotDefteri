@@ -5,4 +5,5 @@
     <string name="baslik">Başlık</string>
     <string name="kaydet">Kaydet</string>
     <string name="metin">Metin</string>
+    <string name="sil">Sil</string>
 </resources>
