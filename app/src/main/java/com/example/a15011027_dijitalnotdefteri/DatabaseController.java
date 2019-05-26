@@ -48,7 +48,7 @@ public class DatabaseController {
     public List<Not> list() {
         List<Not> notlar = new ArrayList<Not>();
 
-        String columns[] = {"id", "baslik", "metin"};
+        String columns[] = {"id", "baslik", "metin", "tarih"};
         Cursor c = db.query("NOTLAR", columns, null, null, null, null, null);
         c.moveToFirst();
 
@@ -57,11 +57,12 @@ public class DatabaseController {
             String baslik = c.getString(1);
             String metin = c.getString(2);
             String tarihString = (c.getString(3));
-            Date tarih = new SimpleDateFormat("dd MM yyyy").parse(tarihString, new ParsePosition(0));
+            Date tarih = new SimpleDateFormat("dd MMM yyyy").parse(tarihString, new ParsePosition(0));
             Not not = new Not(id, baslik, metin, tarih);
             notlar.add(not);
+            c.moveToNext();
         }
-
+        c.close();
         return notlar;
     }
 }

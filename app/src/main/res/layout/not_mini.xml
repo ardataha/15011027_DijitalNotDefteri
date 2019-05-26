@@ -12,7 +12,7 @@
     <TextView
         android:id="@+id/baslik_mini"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="27dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Not 1"
@@ -23,14 +23,14 @@
     <TextView
         android:id="@+id/metin_mini"
         android:layout_width="0dp"
-        android:layout_height="21dp"
-        app:fontFamily="@font/roboto"
-        tools:text="öyle böyle şöyle öyle böyle şöyle öyle böyle şöyle öyle böyle"
+        android:layout_height="22dp"
         android:textColor="#424242"
         android:textSize="16sp"
+        app:fontFamily="@font/roboto"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/tarih_mini"
-        app:layout_constraintTop_toBottomOf="@id/baslik_mini" />
+        app:layout_constraintTop_toBottomOf="@id/baslik_mini"
+        tools:text="öyle böyle şö" />
 
     <TextView
         android:id="@+id/tarih_mini"

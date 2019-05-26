@@ -9,6 +9,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class NotlarAdapter extends RecyclerView.Adapter<NotlarAdapter.MyViewHolder> {
@@ -17,11 +20,14 @@ public class NotlarAdapter extends RecyclerView.Adapter<NotlarAdapter.MyViewHold
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
-        public ConstraintLayout not_mini;
+        public TextView baslik, metin, tarih;
 
         public MyViewHolder(View view){
             super(view);
-            not_mini = (ConstraintLayout)view.findViewById(R.id.not_mini);
+
+            baslik = (TextView) view.findViewById(R.id.baslik_mini);
+            metin = (TextView) view.findViewById(R.id.metin_mini);
+            tarih = (TextView) view.findViewById(R.id.tarih_mini);
         }
     }
 
@@ -36,13 +42,11 @@ public class NotlarAdapter extends RecyclerView.Adapter<NotlarAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-
-        holder.not_mini.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(v.getContext(), "Hello World!", Toast.LENGTH_SHORT).show();
-            }
-        });
+        Not not = notlar.get(position);
+        holder.baslik.setText(not.getBaslik());
+        holder.metin.setText(not.getMetin());
+        SimpleDateFormat objSDF = new SimpleDateFormat("dd MMM yyyy");
+        holder.tarih.setText(objSDF.format(not.getTarih()));
     }
 
     public int getItemCount(){

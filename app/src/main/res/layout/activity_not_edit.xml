@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF8"
+    tools:context=".NotEdit">
+
+    <EditText
+        android:id="@+id/not_baslik"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/baslik"
+        app:fontFamily="@font/roboto"
+        android:textSize="34sp"
+        android:inputType="text"
+        android:background="@null"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/not_metin"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintBottom_toTopOf="@id/kaydet_button"
+        app:layout_constraintTop_toBottomOf="@id/not_baslik"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:background="@null"
+        android:hint="@string/metin"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:textSize="20sp"
+        app:fontFamily="@font/roboto" />
+
+    <Button
+        android:id="@+id/kaydet_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/kaydet"
+        app:fontFamily="@font/roboto_medium"
+        android:textSize="14sp"
+        android:textColor="#FFFFFF"
+        android:background="@color/colorPrimaryDark" />
+
+</android.support.constraint.ConstraintLayout>

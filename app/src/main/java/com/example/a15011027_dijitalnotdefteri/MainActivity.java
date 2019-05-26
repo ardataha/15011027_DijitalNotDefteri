@@ -1,5 +1,6 @@
 package com.example.a15011027_dijitalnotdefteri;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -7,12 +8,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    public List<Not> notlar;
+    public List<Not> notlar = new ArrayList<Not>();
     private RecyclerView recyclerView;
     private NotlarAdapter mAdapter;
     private DatabaseController databaseController;
@@ -37,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
         yeniNotButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Not not = new Not(1, "Not 1", "İlk not", new Date());
+                Intent intent = new Intent(MainActivity.this, NotEdit.class);
+                startActivity(intent);
             }
         });
     }

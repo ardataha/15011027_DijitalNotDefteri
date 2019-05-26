@@ -13,7 +13,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String sql = "CREATE TABLE NOTLAR(id integer primary key autoincrement," +
-        "baslik text, body text, tarih text)";
+        "baslik text, metin text, tarih text)";
         db.execSQL(sql);
     }
 
